@@ -1,0 +1,27 @@
+<h1>www.planyourtrip.de</h1>
+<ul>
+  <li><%= link_to "Countries", countries_path %></li>
+  <li><%= link_to "Cities", cities_path %></li>
+</ul>
+
+<div id="map" style="height:500px; width:800px;"></div>
+
+<script src="http://www.openlayers.org/api/OpenLayers.js"></script>
+<script>
+    map = new OpenLayers.Map("map");
+    map.addLayer(new OpenLayers.Layer.OSM());
+
+    var lngLat = new OpenLayers.LonLat(13.41,52.52) // Center of the map
+          .transform(
+            new OpenLayers.Projection("EPSG:4326"), // transform from WGS 1984
+            new OpenLayers.Projection("EPSG:900913") // to Spherical Mercator Projection
+          );
+
+    map.setCenter(lngLat, 14);
+
+    var markers = new OpenLayers.Layer.Markers( "Markers" );
+    map.addLayer(markers);
+ 
+    markers.addMarker(new OpenLayers.Marker(lonLat));
+ 
+</script>
