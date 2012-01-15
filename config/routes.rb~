@@ -1,8 +1,10 @@
 PlanYourTrip::Application.routes.draw do
 
-  resources :countries do
-    resources :cities
-  end
+  resources :destinations
+
+  resources :cities
+
+  resources :countries
 
   get "home/index"
 

@@ -18,7 +18,7 @@
     <td><%= city.content %></td>
     <td><%= city.lat %></td>
     <td><%= city.lng %></td>
-    <td><%= city.country %></td>
+    <td><%= city.country.name %></td>
     <td><%= link_to 'Show', city %></td>
     <td><%= link_to 'Edit', edit_city_path(city) %></td>
     <td><%= link_to 'Destroy', city, :confirm => 'Are you sure?', :method => :delete %></td>
@@ -29,3 +29,4 @@
 <br />
 
 <%= link_to 'New City', new_city_path %>
+<%= link_to "Start", start %>

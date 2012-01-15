@@ -37,10 +37,6 @@
     <%= f.label :lng %><br />
     <%= f.text_field :lng %>
   </div>
-  <div class="field">
-    <%= f.label :country %><br />
-    <%= f.text_field :country %>
-  </div>
   <div class="actions">
     <%= f.submit %>
   </div>

@@ -1,10 +1,14 @@
 PlanYourTrip::Application.routes.draw do
 
+  resources :destinations
+
   resources :cities
 
   resources :countries
 
   get "home/index"
+
+  match 'start' => 'home#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

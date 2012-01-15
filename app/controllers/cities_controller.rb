@@ -25,6 +25,7 @@ class CitiesController < ApplicationController
   # GET /cities/new.json
   def new
     @city = City.new
+    @available_countries = Country.find(:all).map {|ev| [ev.name, ev.id] }
 
     respond_to do |format|
       format.html # new.html.erb
@@ -35,13 +36,13 @@ class CitiesController < ApplicationController
   # GET /cities/1/edit
   def edit
     @city = City.find(params[:id])
+    @available_countries = Country.find(:all).map {|ev| [ev.name, ev.id] }
   end
 
   # POST /cities
   # POST /cities.json
   def create
-    @city = City.new(params[:id])
-    @city.country = Country.find(1)
+    @city = City.new(params[:city])
 
     respond_to do |format|
       if @city.save
@@ -58,7 +59,6 @@ class CitiesController < ApplicationController
   # PUT /cities/1.json
   def update
     @city = City.find(params[:id])
-    @city.country = Country.find(1)
 
     respond_to do |format|
       if @city.update_attributes(params[:city])
