@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @travel_type.name %>
+</p>
+
+<p>
+  <b>Content:</b>
+  <%= @travel_type.content %>
+</p>
+
+
+<%= link_to 'Edit', edit_travel_type_path(@travel_type) %> |
+<%= link_to 'Back', travel_types_path %>

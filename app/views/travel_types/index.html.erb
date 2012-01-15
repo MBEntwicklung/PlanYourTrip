@@ -1,0 +1,25 @@
+<h1>Listing travel_types</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Content</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @travel_types.each do |travel_type| %>
+  <tr>
+    <td><%= travel_type.name %></td>
+    <td><%= travel_type.content %></td>
+    <td><%= link_to 'Show', travel_type %></td>
+    <td><%= link_to 'Edit', edit_travel_type_path(travel_type) %></td>
+    <td><%= link_to 'Destroy', travel_type, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Travel type', new_travel_type_path %>

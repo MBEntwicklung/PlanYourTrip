@@ -1,5 +1,7 @@
 PlanYourTrip::Application.routes.draw do
 
+  resources :travel_types
+
   resources :destinations
 
   resources :cities
